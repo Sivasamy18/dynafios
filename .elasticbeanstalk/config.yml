@@ -1,0 +1,16 @@
+branch-defaults:
+  default:
+    environment: Dynafiosapp-main-env
+  master:
+    environment: Dynafiosapp-main-env
+  development:
+    environment: Dynafiosapp-main-env
+  gitlab-cicd:
+    environment: Dynafiosapp-main-env
+global:
+  application_name: Dynafiosapp
+  default_ec2_keyname: beanstalk-key-pair
+  default_platform: 64bit Amazon Linux 2016.03 v2.1.5 running PHP 7.0
+  default_region: us-west-1
+  profile: eb-cli
+  sc: git

@@ -1,0 +1,16 @@
+<svg id="approve" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #65ad5f;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="20" cy="20" r="20"/>
+  <path id="Forma_1" data-name="Forma 1" class="cls-2" d="M30.772,14.381L17.519,27.56a1.538,1.538,0,0,1-2.167,0L8.23,20.478a0.759,0.759,0,0,1,0-1.078l1.084-1.078a0.77,0.77,0,0,1,1.084,0l6.038,6L28.6,12.226a0.769,0.769,0,0,1,1.084,0L30.772,13.3A0.759,0.759,0,0,1,30.772,14.381Z"/>
+</svg>

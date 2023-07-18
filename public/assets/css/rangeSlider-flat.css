@@ -1,0 +1,96 @@
+.rangeSlider,
+.rangeSlider__fill {
+    background: #f5f5f5;
+	border: 1px solid #a6afe1;
+    display: inline-block;
+    height: 8px;
+    width: 82%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.rangeSlider {
+    position: relative;
+}
+
+.rangeSlider--disabled {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    opacity: 0.4;
+}
+
+.rangeSlider__fill {
+    background: #2196f3;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+	border: 0;
+}
+
+.rangeSlider__handle {
+    background: #1a245d;
+    /*border: 1px solid #1a245d;*/
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    top: -9px;
+    z-index: 3;
+    background-image: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.rangeSlider__handle:active {
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.12)));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+    background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+    outline: none;
+}
+
+input[type="range"]:focus + .rangeSlider .rangeSlider__handle {
+    -webkit-box-shadow: 0 0 8px rgba(142, 68, 173, 0.9);
+    -moz-box-shadow: 0 0 8px rgba(142, 68, 173, 0.9);
+    box-shadow: 0 0 8px rgba(142, 68, 173, 0.9);
+}
+
+.rangeSlider__buffer {
+    z-index: 1;
+    position: absolute;
+    top: 2px;
+    height: 4px;
+    background: #2c3e50;
+    border-radius: 2px;
+}
+
+.rangeSliderDiv{
+    width: 100%;
+    display: block;
+    padding-top: 15px;
+    position: relative;
+}
+
+output {
+    display: inline-block;
+    font-size: 14px;
+    text-align: right;
+    /*width: 10%;*/
+    padding-top: 10px;
+    vertical-align: middle;
+    transform: translateY(-35%);
+    top: 35%;
+}

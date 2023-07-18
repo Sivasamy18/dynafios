@@ -1,0 +1,9 @@
+.wrapper{background:#545454}
+.navbar{margin-bottom:0}
+.content{background:#fff;box-shadow:0 0 20px 5px rgba(0,0,0,0.4);padding-left:50px;padding-right:50px;padding-bottom:100px}
+.header{border-bottom:1px solid #c6c6c6;padding-top:40px;padding-bottom:40px;position:relative}
+.header .links{position:absolute;top:100px;right:0}
+.buttons{margin-bottom:40px}
+.buttons .button{color:#fff;background:#000;margin-left:4px;float:right;padding:6px 20px}
+.buttons .button:hover{background:#000d20;text-decoration:none}
+.content p,.content li{width:70%}

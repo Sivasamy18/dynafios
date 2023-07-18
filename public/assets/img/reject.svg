@@ -1,0 +1,24 @@
+<svg id="reject" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27" height="27" viewBox="0 0 27 27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        filter: url(#filter);
+      }
+
+      .cls-2 {
+        fill: #f68a1f;
+        fill-rule: evenodd;
+      }
+    </style>
+    <filter id="filter" x="-5" y="-5" width="37" height="37" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dy="3" in="SourceAlpha"/>
+      <feGaussianBlur result="blur" stdDeviation="2.646"/>
+      <feFlood result="flood" flood-opacity="0.17"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect class="cls-1" x="4" y="1" width="19" height="19" rx="5" ry="5"/>
+  <path id="add" class="cls-2" d="M17.308,15.689L13.49,11.871,9.671,15.689A0.982,0.982,0,0,1,8.283,14.3L12.1,10.482,8.283,6.664A0.982,0.982,0,1,1,9.672,5.275L13.49,9.094l3.818-3.818A0.982,0.982,0,0,1,18.7,6.664l-3.818,3.818L18.7,14.3A0.982,0.982,0,1,1,17.308,15.689Z"/>
+</svg>

@@ -1,0 +1,484 @@
+/*****************************************************************************
+ * Overview Page
+ ****************************************************************************/
+#wrapper {
+    background: url(../img/overview/wrapper.png) repeat;
+}
+
+#header {
+    background: #000;
+}
+
+#header .inner {
+    width: 1200px;
+    height: 61px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#header .brand {
+    display: block;
+    width: 100px;
+    height: 33px;
+    background: url(../img/overview/brand-small.png) no-repeat;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+#header .menu {
+    position: absolute;
+    top: 23px;
+    right: 0;
+}
+
+#header .menu ul {
+    list-style: none;
+}
+
+#header .menu ul .menu-item {
+    float: left;
+    margin-right: 20px;
+}
+
+#header .menu ul .menu-item a {
+    color: #b0b0b0;
+    font-size: 12px;
+    font-family: "Antic Slab";
+}
+
+#header .menu ul .menu-item a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#header .menu ul .active-menu-item a {
+    color: #fff;
+    background: #2b2b2b;
+    padding: 4px 10px 4px 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#page {
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    position: relative;
+}
+
+#page:before {
+    box-shadow: -15px 0 20px -15px inset;
+    content: " ";
+    height: 100%;
+    left: -30px;
+    position: absolute;
+    top: 0;
+    width: 30px;
+}
+
+#page:after {
+    box-shadow: 15px 0 20px -15px inset;
+    content: " ";
+    height: 100%;
+    right: -30px;
+    position: absolute;
+    top: 0;
+    width: 30px;
+}
+
+#hero {
+    display: block;
+    height: 445px;
+    background: url(../img/overview/hero.png) no-repeat center;
+    position: relative;
+}
+
+#hero .content {
+    position: absolute;
+    top: 62px;
+    right: 120px;
+    text-align: right;
+}
+
+#hero .heading {
+    color: #fff;
+    font-size: 24px;
+    font-family: "Roboto";
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+#hero .body {
+    color: #fff;
+    font-size: 18px;
+    font-family: "Roboto";
+    font-weight: 300;
+    line-height: 22px;
+}
+
+#page .menu {
+    display: block;
+    height: 45px;
+    background: url(../img/overview/menu.png) repeat-x;
+    position: relative;
+}
+
+#page .menu ul {
+    list-style: none;
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+
+#page .menu .menu-item {
+    float: left;
+    margin-right: 30px;
+}
+
+#page .menu .menu-item a {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: "Antic Slab";
+}
+
+#page .menu .back-menu-item {
+    border-left: 1px solid #333;
+    padding-left: 30px;
+}
+
+#page .menu .active-menu-item a {
+    background: url(../img/overview/active-menu-item.png) no-repeat bottom center;
+    height: 32px;
+}
+
+#page .menu .active-menu-item a:hover {
+    text-decoration: none;
+}
+
+#page .menu-affixed {
+    width: 1200px;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+#features {
+    height: 195px;
+    /*background: url(../img/overview/points.png) no-repeat center;*/
+    background-color:#FFFFFF;
+}
+
+#features .column {
+    width: 200px;
+    float: left;
+    text-align: center;
+}
+
+#features .heading {
+    color: #221f1f;
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: bold;
+}
+
+#features .body {
+    color: #2f3238;
+    font-size: 12px;
+    font-family: "Roboto";
+    margin-top: 5px;
+}
+
+#features .feature-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: url(../img/overview/feature-icons.png) no-repeat;
+    margin: 44px auto 0 auto;
+}
+
+#features .feature-icon-1 {
+}
+
+#features .feature-icon-2 {
+    background-position: -35px 0;
+}
+
+#features .feature-icon-3 {
+    background-position: -70px 0;
+}
+
+#features .feature-icon-4 {
+    background-position: -105px 0;
+}
+
+#features .feature-icon-5 {
+    background-position: -140px 0;
+}
+
+#features .feature-icon-6 {
+    background-position: -175px 0;
+}
+
+#application {
+    height: 1108px;
+    background: url(../img/overview/application.png) no-repeat center;
+    position: relative;
+}
+
+#application header {
+    position: absolute;
+    top: 92px;
+    right: 130px;
+}
+
+#application header .heading {
+    color: #fff;
+    font-size: 22px;
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+#application header .p1 {
+    color: #eef2f8;
+    font-size: 24px;
+    font-family: "Roboto";
+    margin-top: 20px;
+    line-height: 22px;
+}
+
+#application header .p2 {
+    color: #eef2f8;
+    font-size: 18px;
+    font-family: "Roboto";
+    margin-top: 20px;
+    line-height: 22px;
+}
+
+#application .divider-heading {
+    display: block;
+    color: #fff;
+    font-size: 24px;
+    font-family: "Roboto";
+    position: absolute;
+    top: 452px;
+    left: 500px;
+}
+
+#application .features {
+    position: absolute;
+    top: 960px;
+}
+
+#application .feature {
+    width: 200px;
+    color: #eef2f8;
+    text-align: center;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+#application .feature-1 {
+    position: absolute;
+    left: 100px;
+}
+
+#application .feature-2 {
+    position: absolute;
+    left: 300px;
+}
+
+#application .feature-3 {
+    position: absolute;
+    left: 500px;
+}
+
+#application .feature-4 {
+    position: absolute;
+    left: 700px;
+}
+
+#application .feature-5 {
+    position: absolute;
+    left: 900px;
+}
+
+#dashboard {
+    height: 912px;
+    background: url(../img/overview/dashboard.png) no-repeat;
+    margin-top: -20px;
+    position: relative;
+}
+
+#dashboard .heading-1 {
+    position: absolute;
+    top: 90px;
+    left: 70px;
+}
+
+#dashboard .heading-1 .title {
+    color: #eef2f8;
+    font-size: 47px;
+    font-family: "Roboto";
+    font-weight: 700;
+    margin: 0;
+}
+
+#dashboard .heading-1 .title em {
+    color: #0066ff;
+    font-style: normal;
+}
+
+#dashboard .heading-1 .body {
+    display: block;
+    color: #eef2f8;
+    font-size: 24px;
+    font-family: "Roboto";
+    line-height: 40px;
+}
+
+#reports {
+    width: 1200px;
+    position: absolute;
+    top: 400px;
+}
+
+#reports .heading-1 {
+    position: absolute;
+    top: 40px;
+    left: 170px;
+}
+
+#reports .heading-1 .title {
+    color: #0066ff;
+    font-size: 24px;
+    font-family: "Source Sans Pro";
+    font-weight: 700;
+}
+
+#reports .heading-1 .body {
+    display: block;
+    color: #fff;
+    font-size: 22px;
+    font-family: "Source Sans Pro";
+    line-height: 24px;
+}
+
+#reports .heading-2 {
+    position: absolute;
+    top: 115px;
+    left: 700px;
+    margin: 0;
+}
+
+#reports .heading-2 .title {
+    color: #6d6d6d;
+    font-size: 47px;
+    font-family: "Roboto";
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+#reports .heading-2 .title em {
+    color: #0066ff;
+    font-style: normal;
+}
+
+#reports .heading-2 .body {
+    color: #fff;
+    font-size: 20px;
+    font-family: "Roboto";
+    font-weight: 300;
+    padding-top: 20px;
+    padding-left: 140px;
+    line-height: 24px;
+}
+
+#requirements {
+    height: 395px;
+    background: url(../img/overview/requirements.png) no-repeat;
+    position: relative;
+}
+
+#requirements .brand {
+    position: absolute;
+    top: 68px;
+    left: 169px;
+}
+
+#requirements .content {
+    position: absolute;
+    top: 88px;
+    left: 425px;
+}
+
+#requirements .content .heading {
+    color: #383838;
+    font-size: 28px;
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+#requirements .content .body {
+    color: #5f5f5f;
+    font-size: 16px;
+    font-family: "Roboto";
+    font-weight: 300;
+    line-height: 18px;
+}
+
+#requirements .dynafios-logo {
+    position: absolute;
+    bottom: 24px;
+    right: 142px;
+}
+
+#requirements .info {
+    color: #5f5f5f;
+    font-size: 14px;
+    font-family: "Roboto";
+    position: absolute;
+    top: 84px;
+    right: 120px;
+}
+
+#requirements .info .web {
+    display: block;
+    width: 140px;
+    float: left;
+    text-align: center;
+}
+
+#requirements .info .web a {
+    color: #5f5f5f;
+}
+
+#requirements .info .phone {
+    display: block;
+    width: 140px;
+    float: left;
+    text-align: center;
+}
+
+#requirements .info-icon {
+    display: block;
+    width: 55px;
+    height: 70px;
+    background: url(../img/overview/info-icons.png) no-repeat;
+    margin: 0 auto;
+}
+
+#requirements .info-icon-1 {
+}
+
+#requirements .info-icon-2 {
+    background-position: -55px 0;
+}
+
+#footer {
+    display: block;
+    height: 61px;
+    background: #000;
+}

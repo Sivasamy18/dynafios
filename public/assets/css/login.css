@@ -1,0 +1,93 @@
+.federation-services{
+  width: 380px;
+  height: 250px;
+  padding: 30px;
+  /* margin: 50px 20px 10px 20px;; */
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  align-items:  stretch;
+}
+
+.custom-federation-descriptor{
+  margin-top: 10px;
+}
+
+
+.custom-fed-btn{
+  display: block;
+  padding: 6px 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+  text-decoration: none;
+  margin: 5px 0;
+}
+
+.custom-btn{
+    display: block;
+    padding: 6px 0;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.custom-btn:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.custom-saml-service{
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.saml-service:hover, .custom-saml-service:hover {
+  color: #fff;
+  background: #31b0d5;
+  border-color: #31b0d5;
+}
+
+.custom-google-service {
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #FFF;
+  background: #4285F4;
+}
+
+.google-service:hover, .custom-google-service:hover{
+  background: #3f7ce8;
+  border-color: #3f7ce8;
+  color: #EEE;
+}

@@ -1,0 +1,126 @@
+image: $AWS_DYNAFIOS_REGISTRY/dynafios-builder:latest
+
+.init_ssh: &init_ssh |
+  eval $(ssh-agent -s)
+  echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  mkdir -p ~/.ssh
+  chmod 700 ~/.ssh
+  [[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  
+#   Replace the last line with the following lines if you'd rather
+#   leave StrictHostKeyChecking enabled (replace yourdomain.com):
+#
+#    ssh-keyscan yourdomain.com >> ~/.ssh/known_hosts
+#    chmod 644 ~/.ssh/known_hosts
+
+.change_file_permissions: &change_file_permissions |
+  find . -type f -not -path "./vendor/*" -exec chmod 664 {} \;    
+  find . -type d -not -path "./vendor/*" -exec chmod 775 {} \;
+
+update token:
+  tags:
+    - "dev-v1-docker"
+  image:
+    name: amazon/aws-cli
+    entrypoint: [ "" ]
+  before_script:
+    - aws --version
+  stage: .pre
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+  script:
+    - USER=AWS
+    - TOKEN=$(aws ecr get-login-password --region us-west-2 )
+    - AUTH=$(echo -n "$USER:$TOKEN" | base64 | tr -d "\n")
+    - |
+      curl --location --silent --request PUT --header "Authorization: Bearer $GITLAB_PERSONAL_ACCESS_TOKEN" \
+      --output /dev/null --show-error --fail "https://gitlab.com/api/v4/projects/$CI_PROJECT_ID/variables/AWS_ECR_AUTH" --form "value=$AUTH"
+
+composer:
+  tags:
+    - "dev-v1-docker"
+  stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+  cache:
+    paths:
+      - vendor/
+  script:
+    - cat $TESTING_ENV_FILE > .env
+    - composer install --optimize-autoloader --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+    - composer dumpautoload
+    - php artisan key:generate
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - vendor/
+
+phpunit:
+  tags:
+    - "dev-v1-docker"
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "schedule"
+  dependencies:
+    - composer
+  script:
+    - cat $TESTING_ENV_FILE > .env
+    - chmod 775 .env
+    - echo "WARNING - Skipping Tests"
+
+staging:
+  tags:
+    - "dev-v1-docker"
+  stage: deploy
+  script:
+    - mkdir ~/.aws/
+    - touch ~/.aws/credentials
+    - cat $STAGING_ENV_FILE > .env
+    - printf "[eb-cli]\naws_access_key_id = %s\naws_secret_access_key = %s\n" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+    - touch ~/.aws/config
+    - printf "[profile eb-cli]\nregion=us-west-1\noutput=json" >> ~/.aws/config
+    - eb deploy Dynafiosapp-main-env
+  environment:
+    name: staging
+    url: https://staging.dynafiosapp.com
+  only:
+    - develop
+    - gitlab-cicd
+    - develop_fix
+
+demo:
+  tags:
+    - "dev-v1-docker"
+  stage: deploy
+  before_script:
+    - chmod 400 $AWS_SECRET_ACCESS_KEY
+  script:
+    - *init_ssh
+    - *change_file_permissions
+    - ssh -o StrictHostKeyChecking=no $SERVER_ADDRESS -i $AWS_SECRET_ACCESS_KEY "cat /tmp/deploy"
+    - ls -l .
+  environment:
+    name: demo
+    url: https://demo.dynafiosapp.com
+  when: manual
+  only:
+    - master
+
+production:
+  tags:
+    - "dev-v1-docker"
+  stage: deploy
+  script:
+    - echo "WARNING - Skipping Deploy"
+  #    - mkdir ~/.aws/
+  #    - touch ~/.aws/credentials
+  #    - cat $PRODUCTION_ENV_FILE > .env
+  #    - printf "[eb-cli]\naws_access_key_id = %s\naws_secret_access_key = %s\n" "$AWS_ACCESS_KEY_ID" "$AWS_SECRET_ACCESS_KEY" >> ~/.aws/credentials
+  #    - touch ~/.aws/config
+  #    - printf "[profile eb-cli]\nregion=us-west-1\noutput=json" >> ~/.aws/config
+  #    - eb deploy Dynafiosapp-main-env
+  environment:
+    name: production
+    url: https://upgraded.dynafiosapp.com
+  only:
+    - main
